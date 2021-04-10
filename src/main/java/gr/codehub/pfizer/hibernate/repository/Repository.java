@@ -5,8 +5,6 @@ import java.util.List;
 
 public abstract class Repository<T,K> {
 
-
-
     private EntityManager entityManager;
 
     public Repository(EntityManager entityManager){
