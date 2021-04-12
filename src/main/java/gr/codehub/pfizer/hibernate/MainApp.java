@@ -33,7 +33,7 @@ public class MainApp extends Application {
         c.start();
 
         LOGGER.info("Sample Web API started");
-        LOGGER.info("URL: http://localhost:9000/v1/ping");
+        LOGGER.info("URL: http://localhost:9000/v1/product");
     }
 
     @Override
