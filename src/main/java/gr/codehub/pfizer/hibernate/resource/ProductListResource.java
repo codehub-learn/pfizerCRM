@@ -5,6 +5,7 @@ import gr.codehub.pfizer.hibernate.model.Product;
 import gr.codehub.pfizer.hibernate.repository.ProductRepository;
 import gr.codehub.pfizer.hibernate.representation.ProductRepresentation;
 import org.restlet.resource.Get;
+import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 
 import javax.persistence.EntityManager;
@@ -32,7 +33,19 @@ public class ProductListResource extends ServerResource {
         return productRepresentationList;
     }
 
-    //@Post
+    @Post("json")
+    public ProductRepresentation add(ProductRepresentation productRepresentationIn){
+
+        if (productRepresentationIn ==null) return null;
+        if (productRepresentationIn.getName() == null) return null;
+
+        Product product = productRepresentationIn.createProduct();
+        EntityManager em = JpaUtil.getEntityManager();
+        ProductRepository productRepository = new ProductRepository(em);
+        productRepository.save(product);
+        ProductRepresentation p = new ProductRepresentation(product);
+        return p;
+    }
 
 
 }

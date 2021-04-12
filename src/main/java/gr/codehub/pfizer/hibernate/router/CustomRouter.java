@@ -1,8 +1,6 @@
 package gr.codehub.pfizer.hibernate.router;
 
-import gr.codehub.pfizer.hibernate.resource.PingServerResource;
-import gr.codehub.pfizer.hibernate.resource.ProductListResource;
-import gr.codehub.pfizer.hibernate.resource.ProductResource;
+import gr.codehub.pfizer.hibernate.resource.*;
 import org.restlet.Application;
 import org.restlet.routing.Router;
 
@@ -20,6 +18,9 @@ public class CustomRouter {
         router.attach("/ping", PingServerResource.class);
         router.attach("/product", ProductListResource.class);
         router.attach("/product/{id}", ProductResource.class);
+
+      router.attach("/customer", CustomerListResource.class);
+        router.attach("/customer/{id}", CustomerResource.class);
 
         return router;
     }
