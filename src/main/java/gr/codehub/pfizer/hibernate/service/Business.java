@@ -1,4 +1,4 @@
-package gr.codehub.pfizer.hibernate.services;
+package gr.codehub.pfizer.hibernate.service;
 
 import gr.codehub.pfizer.hibernate.model.Cart;
 import gr.codehub.pfizer.hibernate.model.CartProduct;

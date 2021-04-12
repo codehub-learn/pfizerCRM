@@ -5,9 +5,9 @@ import java.util.List;
 
 public abstract class Repository<T,K> {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    public Repository(EntityManager entityManager){
+    protected Repository(EntityManager entityManager){
         this.entityManager = entityManager;
     }
 
@@ -28,8 +28,8 @@ public abstract class Repository<T,K> {
     public abstract String getClassName();
     // Read select
     public T read(K id){
-        T t = entityManager.find(getEntityClass(), id);
-        return t;
+        return entityManager.find(getEntityClass(), id);
+
     }
 
     public List<T> findAll(){
@@ -41,15 +41,7 @@ public abstract class Repository<T,K> {
     public T update( T t)
     {
 
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(t);
-            entityManager.getTransaction().commit();
-            return t;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+         return save(t);
     }
 
 
