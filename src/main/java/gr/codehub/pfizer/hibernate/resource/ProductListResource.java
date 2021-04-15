@@ -9,11 +9,12 @@ import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProductListResource extends ServerResource {
+import static java.util.stream.Collectors.toList;
 
+public class ProductListResource extends ServerResource {
+//     Product  -> T     ProductRepresentation ->         ProductRepository -> Repository<T>
 
     @Get("json")
     public List<ProductRepresentation> getProduct(){
@@ -21,14 +22,10 @@ public class ProductListResource extends ServerResource {
         ProductRepository productRepository = new ProductRepository(em);
         List<Product> products = productRepository.findAll();
         em.close();
-//        List<ProductRepresentation> productRepresentationList =
-//                products.stream()
-//                .map(p-> new ProductResource(p)).
-//                .collect(toList());
-
-        List<ProductRepresentation> productRepresentationList = new ArrayList<>();
-        for (Product p : products)
-            productRepresentationList.add(new ProductRepresentation(p));
+        List<ProductRepresentation> productRepresentationList =
+                products.stream()
+               .map( p-> new ProductRepresentation(p))
+               .collect(toList());
 
         return productRepresentationList;
     }

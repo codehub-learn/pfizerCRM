@@ -15,6 +15,26 @@ import java.util.Date;
 public class Business {
 
 
+    public static void testMe(EntityManager em ) {
+        CartRepository cartRepository = new CartRepository(em);
+        CustomerRepository customerRepository  = new CustomerRepository(em);
+        Customer customer = new Customer();
+        customer.setName("Marios G");
+        customer.setAddress("Thessaloniki");
+        customer.setEmail("marios@gmail.com");
+        customer.setUsername("marios2");
+        customer.setId(5);
+        customerRepository.save(customer);
+
+
+        Cart cart = new Cart();
+        cart.setDate(new Date());
+        cart.setCustomer(customer);
+        cart.setId(5);
+        cartRepository.save(cart);
+    }
+
+
     public static void createData(EntityManager em ) {
         CustomerRepository customerRepository  = new CustomerRepository(em);
         Customer customer = new Customer();

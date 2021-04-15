@@ -18,6 +18,7 @@ public class Customer {
     private String username;
     private String password;
     private String email;
+    private String role;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Cart> carts;

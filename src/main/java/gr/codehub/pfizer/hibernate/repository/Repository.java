@@ -15,7 +15,8 @@ public abstract class Repository<T,K> {
     public T save(T t){
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(t);
+                   entityManager.persist(t);
+
             entityManager.getTransaction().commit();
             return t;
         } catch (Exception e) {

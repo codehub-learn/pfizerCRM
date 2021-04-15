@@ -18,6 +18,7 @@ public class CustomerRepresentation {
     private String username;
     private String password;
     private String email;
+    private String role;
 
 
     private String uri;
@@ -29,6 +30,7 @@ public class CustomerRepresentation {
             username = customer.getUsername();
             email = customer.getEmail();
             password = customer.getPassword();
+            role = customer.getRole();
              uri =  "http://localhost:9000/v1/customer/" + customer.getId();
         }
 
@@ -41,6 +43,7 @@ public class CustomerRepresentation {
         customer.setUsername(username);
         customer.setEmail(email);
         customer.setPassword(password);
+        customer.setRole(role);
         return customer;
     }
 

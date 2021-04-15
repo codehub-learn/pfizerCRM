@@ -15,14 +15,27 @@ public class CustomRouter {
 
     public Router publicResources() {
         Router router = new Router();
-        router.attach("/ping", PingServerResource.class);
-        router.attach("/product", ProductListResource.class);
-        router.attach("/product/{id}", ProductResource.class);
+        router.attach("/ping", PingServerResource.class); //get
+         return router;
+    }
 
-      router.attach("/customer", CustomerListResource.class);
-        router.attach("/customer/{id}", CustomerResource.class);
 
+    public Router protectedResources(){
+        Router router = new Router();
+        router.attach("/product", ProductListResource.class); //get, post
+        router.attach("/product/{id}", ProductResource.class); //get, put, delete
+
+        router.attach("/customer", CustomerListResource.class);//get, post
+        router.attach("/customer/{id}", CustomerResource.class);//get, put, delete
+
+
+        //router.attach("/cart", CartListResource.class); //get, post
+        //router.attach("/cart/{id}", CartResource.class);//get, put, delete
+
+        //router.attach("/cart/{id}/product", CartProductListResource.class); //get, post
+        //router.attach("/cart/{id}/product/{pid}", CartProductResource.class);//get, put, delete
         return router;
+
     }
 
 
