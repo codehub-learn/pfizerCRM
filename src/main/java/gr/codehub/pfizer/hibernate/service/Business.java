@@ -11,6 +11,7 @@ import gr.codehub.pfizer.hibernate.repository.ProductRepository;
 
 import javax.persistence.EntityManager;
 import java.util.Date;
+import java.util.List;
 
 public class Business {
 
@@ -23,15 +24,27 @@ public class Business {
         customer.setAddress("Thessaloniki");
         customer.setEmail("marios@gmail.com");
         customer.setUsername("marios2");
-        customer.setId(5);
+
         customerRepository.save(customer);
 
 
         Cart cart = new Cart();
         cart.setDate(new Date());
         cart.setCustomer(customer);
-        cart.setId(5);
         cartRepository.save(cart);
+
+
+        int cartId = cart.getId();
+
+        Customer custDb = cartRepository.getCustomer(cartId);
+        System.out.println(custDb);
+
+
+        List<Cart> carts = customerRepository.getCarts(custDb.getId());
+        System.out.println(carts);
+
+
+
     }
 
 
