@@ -47,3 +47,9 @@ Ksrc/main/java/gr/codehub/pfizer/hibernate/resource/ProductListResource.java,6\
 Psrc/main/java/gr/codehub/pfizer/hibernate/representation/CartRepresentation.java,1\c\1cdc97d5249c0dbe91eafbc5160dcd4f50bf2045
 ‡
 Wsrc/main/java/gr/codehub/pfizer/hibernate/representation/CartProductRepresentation.java,4\3\4368bcff008e7d8ee7f2d6fac2daea0adeeccca1
+r
+Bsrc/main/java/gr/codehub/pfizer/hibernate/security/CorsFilter.java,8\3\83f5a3b127462c0c92ed6826d7d7bfcbef2a77e6
+v
+Fsrc/main/java/gr/codehub/pfizer/hibernate/security/CustomVerifier.java,d\2\d28cb2ce3f6c213fc7ef3b3673628bf279d7831e
+n
+>src/main/java/gr/codehub/pfizer/hibernate/security/Shield.java,8\3\83822423804bc733b7622bef06c47c759c235af0

@@ -69,20 +69,18 @@ public class MainApp extends Application {
 
         CustomRouter customRouter = new CustomRouter(this);
         Shield shield = new Shield(this);
-
-        Router publicRouter = customRouter.publicResources();
         ChallengeAuthenticator apiGuard = shield.createApiGuard();
-        // Create the api router, protected by a guard
 
-        Router apiRouter = customRouter.protectedResources();
-        apiGuard.setNext(apiRouter);
 
-        publicRouter.attachDefault(apiGuard);
+        Router publicResources = customRouter.publicResources();
+        Router protectedResources = customRouter.protectedResources();
 
-        // return publicRouter;
+        publicResources.attachDefault(apiGuard);
+        apiGuard.setNext(protectedResources);
+
 
         CorsFilter corsFilter = new CorsFilter(this);
-        return corsFilter.createCorsFilter(publicRouter);
+        return corsFilter.createCorsFilter(publicResources);
     }
 
 
