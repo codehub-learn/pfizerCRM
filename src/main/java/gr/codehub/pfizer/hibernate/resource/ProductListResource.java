@@ -47,7 +47,7 @@ public class ProductListResource extends ServerResource {
         EntityManager em = JpaUtil.getEntityManager();
         ProductRepository productRepository = new ProductRepository(em);
 
-        List<Product> products = productRepository.getProducts(fromPrice, toPrice);
+        List<Product> products = productRepository.getProducts((float)fromPrice, (float)toPrice);
         em.close();
 
         List<ProductRepresentation> productRepresentationList =

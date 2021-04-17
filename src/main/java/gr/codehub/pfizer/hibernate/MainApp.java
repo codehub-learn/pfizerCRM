@@ -44,7 +44,7 @@ public class MainApp extends Application {
 
         EntityManager em = JpaUtil.getEntityManager();
 
-        Business.testMe(em);
+        //Business.testMe(em);
 
         em.close();
         //////////////////////////////////////

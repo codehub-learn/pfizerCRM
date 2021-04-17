@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 
 public class RegisterResource extends ServerResource {
 
-    @Post
+    @Post("json")
     public ApiResult<CustomerRepresentation> registerCustomer(CustomerRepresentation customerRepresentation) {
 
         if (customerRepresentation == null)

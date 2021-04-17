@@ -27,7 +27,7 @@ public class ProductRepository extends Repository<Product, Integer> {
 
 
     public List<Product> getProducts(float from, float to) {
-        return entityManager.createQuery("select p from Product p  where p.price = :from1 and p.price <= :to1", Product.class)
+        return entityManager.createQuery("select p from Product p  where p.price >= :from1 and p.price <= :to1", Product.class)
                 .setParameter("from1", from)
                 .setParameter("to1", to)
                 .getResultList();
