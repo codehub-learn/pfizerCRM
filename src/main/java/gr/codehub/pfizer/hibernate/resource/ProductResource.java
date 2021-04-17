@@ -26,9 +26,8 @@ public class ProductResource extends ServerResource {
         ProductRepository productRepository = new ProductRepository(em);
         Product product = productRepository.read(id);
         ProductRepresentation productRepresentation2 = new ProductRepresentation(product);
-         em.close();
+        em.close();
         return productRepresentation2;
-
     }
 
 

@@ -29,7 +29,7 @@ public class RegisterResource extends ServerResource {
         CustomerRepository customerRepository = new CustomerRepository(em);
         customerRepository.save(customer);
         return new ApiResult<>(new CustomerRepresentation(customer), 200,
-                "The customers was successfully created");
+                "The customer was successfully created");
     }
 
     public boolean usernameExists(String candidateUsername) {

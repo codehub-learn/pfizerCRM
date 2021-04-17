@@ -7,19 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
-
-    private String name;
-    private String address;
-    @Column(unique = true)
-    private String username;
-    private String password;
-    private String email;
-    private String role;
+public class Customer extends Person{
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Cart> carts;
