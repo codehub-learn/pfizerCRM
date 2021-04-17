@@ -15,6 +15,7 @@ public class Customer {
 
     private String name;
     private String address;
+    @Column(unique = true)
     private String username;
     private String password;
     private String email;

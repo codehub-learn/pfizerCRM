@@ -53,3 +53,13 @@ v
 Fsrc/main/java/gr/codehub/pfizer/hibernate/security/CustomVerifier.java,d\2\d28cb2ce3f6c213fc7ef3b3673628bf279d7831e
 n
 >src/main/java/gr/codehub/pfizer/hibernate/security/Shield.java,8\3\83822423804bc733b7622bef06c47c759c235af0
+q
+Asrc/main/java/gr/codehub/pfizer/hibernate/resource/ApiResult.java,e\9\e99f4fed29a763cf96e81ec7cc69e89dbcd8fc4b
+
+Osrc/main/java/gr/codehub/pfizer/hibernate/exception/AuthorizationException.java,4\8\484211d7139cf9decde3ed76ad450eab92e0d71c
+z
+Jsrc/main/java/gr/codehub/pfizer/hibernate/exception/CustomerException.java,3\6\36ded248baaf9e52b89d267e124325571893325e
+x
+Hsrc/main/java/gr/codehub/pfizer/hibernate/resource/RegisterResource.java,c\f\cf934dd839a046478747394059ec13fcdcc2b444
+u
+Esrc/main/java/gr/codehub/pfizer/hibernate/resource/ResourceUtils.java,c\a\cab483e423308e8e5277f85a2b8fed81fae03cf0
